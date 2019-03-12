@@ -1,0 +1,58 @@
+/*
+ * Style des tableaux
+ */
+
+.generic-table
+{
+    width: 100%;
+}
+.generic-table caption
+{
+    margin: 0.25em 0;
+    color: #EF4036;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    text-decoration: underline !important;
+    font-size: 3em;
+}
+.generic-table .colorful
+{
+    color: #2C75FF;
+}
+.generic-table .number
+{
+    min-width: 75px;
+    text-align: right;
+}
+.generic-table th
+{
+    text-align: left;
+}
+.generic-table td,
+.generic-table th
+{
+    /* structure */
+    padding: 0.5em;
+
+    /* presentation */
+    cursor: default;
+}
+.generic-table tfoot tr td
+{
+    font-weight: bold;
+    text-align: right;
+}
+.generic-table tfoot tr.small-notice td
+{
+    font-size: 0.875em;
+    font-weight: normal;
+    text-align: center;
+}
+.generic-table tr td
+{
+    transition: all 0.25s;
+}
+.generic-table tr:not(.small-notice):hover td
+{
+    background-color: #2C75FF;
+    color: white;
+}

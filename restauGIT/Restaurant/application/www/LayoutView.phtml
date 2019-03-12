@@ -1,0 +1,72 @@
+                        <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>3WA Restaurant</title>
+        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
+        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
+
+<!-- Feuilles de styles de l'application -->
+        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/3wa-resto.css">
+        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-button.css">
+        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-form.css">
+        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-table.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Karla">
+
+<!-- Librairie jQuery -->
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+<!-- JavaScript de l'application -->
+        <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+    </head>
+    <body>
+
+<!--HEADER-->
+    <header>
+        <h1>
+            <a href="<?= $requestUrl ?>">
+                <img src="<?= $wwwUrl ?>/images/flag.png" height="80" width="100" alt="US flag">Restaurant - Made In America !
+                <img src="<?= $wwwUrl ?>/images/flag.png" height="80" width="100" alt="US flag">
+            </a>
+        </h1>
+        <img class="gold" src="<?= $wwwUrl ?>/images/gold.png" width="100" alt="recompense">
+        <img class="chuck" src="<?= $wwwUrl ?>/images/chuck.png" width="200" alt="funny stamp">
+    </header>
+
+<!-- Interface utilisateur -->
+    <nav class="user-interface">
+        <ul class="link-list">
+<!--Création-->
+            <li>
+            <a href="<?= $requestUrl ?>/register"><i class="fa fa-cogs"></i> Créer un compte</a>
+            </li>
+<!--Connexion-->
+            <li class="layout-right">
+            <a href="<?= $requestUrl ?>/user/login"><i class="fa fa-cogs"></i> Connexion</a>
+            </li>
+        </ul>
+    </nav>
+
+<!--MAIN-->
+    <main>
+    <!-- Affichage du template lié à la vue -->
+    <?php include $this->viewData['template']; ?>
+    </main>
+
+<!--FOOTER-->
+    <footer>
+        <ul class="link-list">
+            <li><img src="<?= $wwwUrl ?>/images/payment/visa.png" alt="Visa"></li>
+            <li><img src="<?= $wwwUrl ?>/images/payment/mastercard.png" alt="MasterCard"></li>
+            <li><img src="<?= $wwwUrl ?>/images/payment/paypal.png" alt="PayPal"></li>
+        </ul>
+<!--Sign-->
+        <small><p>by <a href="mailto:nicolasrobo@yahoo.fr">@wild_robz</a></p></small>
+    </footer>
+
+<!-- Code principal JavaScript de l'application -->
+    <script src="<?= $wwwUrl ?>/js/main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!--RESERVETION TABLE-->
+
+<form class="generic-form">
+<h2><i class="fa fa-utensils"></i> Réservation d'une table</h2>
+
+<!--INFORMATIONS-->
+<fieldset>
+    <legend><i class="fa fa-lock"></i> Informations </legend>
+
+<ul>
+   <li><label for="booking">Date de réservation: </label>
+        <select id="booking" name="jour" />
+
+            <?php
+
+            for ($i = 1; $i < 31; $i++)
+            {
+            echo '<option value=\'' . $i . '\'>' . $i . '</option>';
+            }
+            ?>  
+     
+        </select> /
+
+        <select id="birthdate" name="mois" /> 
+            <option>Janvier</option>       
+            <option>Février</option>       
+            <option>Mars</option>       
+            <option>Avril</option>       
+            <option>Mai</option>       
+            <option>Juin</option>       
+            <option>Juillet</option>       
+            <option>Aout</option>       
+            <option>Septembre</option>       
+            <option>Octobre</option>       
+            <option>Novembre</option>       
+            <option>Decembre</option>       
+        </select> /
+
+        <select id="booking" name="year" /> 
+     
+            <?php
+
+            for ($i = 2019; $i < 2025; $i++)
+            {
+            echo '<option value=\'' . $i . '\'>' . $i . '</option>';
+            }
+            ?>   
+   
+        </select> à 
+
+        <select id="booking" name="heure" />
+
+        	<option>11</option>
+            <option>12</option>       
+            <option>13</option>       
+            <option>14</option>       
+            <option>18</option>       
+            <option>19</option>       
+            <option>20</option>       
+            <option>21</option>       
+            <option>22</option>       
+            <option>23</option>        
+     
+        </select> : 
+
+        <select id="booking" name="minutes" />
+
+        	<option>00</option> 
+            <option>15</option>       
+            <option>30</option>            
+            <option>45</option>            
+     
+        </select>
+
+    </li>
+</ul>
+
+</fieldset>
+
+<!--BOUTONS-->
+    <input class="button-primary button" type="submit" name="" value="Réserver">
+    <input class="button-cancel button" type="reset" name="" value="Annuler">
+
+</form>

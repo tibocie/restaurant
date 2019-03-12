@@ -1,0 +1,64 @@
+<!--COMMANDE-->
+
+<form class="generic-form">
+<h2><i class="fa fa-shopping-cart"></i> Passer une commande</h2>
+
+<!--AJOUT-->
+<fieldset action="#" method="post">
+    <legend> Ajouter une article</legend>
+
+<ul>
+<!--SELECTION PRODUITS-->
+	<li><label for="add">Nom: </label>
+
+		<select id="add" name="add" /> 
+            <?php foreach($meals as $meal): ?>
+				<option><?= $meal['Name']; ?></option>
+        	<?php endforeach; ?>       	
+        </select>
+    </li>
+
+<!--AFFICHAGE PRODUIT-->
+	<li><label for="basket-product"></label>
+		<textarea id="basket-product" readonly>
+			<img src="<?= $wwwUrl ?>/images/meals/">
+			
+		</textarea>
+    </li>
+
+<!--QUANTITE-->
+    <li><label for="quantity">Quantité: </label>
+    	<input type="number" name="quantity">  	
+    </li>
+
+<!--BOUTONS-->
+    <input class="button-primary button" type="submit" name="" value="Ajouter">
+
+</ul>
+</fieldset>
+
+<!--BASKET-->
+<fieldset>
+	<legend> Recapitulatif de la commande</legend>
+	<table>
+		<thead>
+			<tr>
+			<th>Quantité</th>
+			<th>Produit</th>
+			<th>Prix Unitaire</th>
+			<th>Prix Total</th>
+			<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
+</fieldset>
+
+<!--BOUTONS-->
+    <input class="button-primary button" type="submit" name="" value="Valider la commande">
+    <input class="button-cancel button" type="reset" name="" value="Annuler">
+
+<script src="../js/classes/OrderForm.class.js"></script>
