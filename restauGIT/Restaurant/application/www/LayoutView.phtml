@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>3WA Restaurant</title>
         <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
-        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 <!-- Feuilles de styles de l'application -->
         <link rel="stylesheet" href="<?= $wwwUrl ?>/css/3wa-resto.css">
@@ -37,14 +37,38 @@
 <!-- Interface utilisateur -->
     <nav class="user-interface">
         <ul class="link-list">
-<!--Création-->
+             
+<!--Non identifié-->
+            <?php if (!isset($_SESSION['FirstName'])): ?>
+    <!--Création-->
             <li>
             <a href="<?= $requestUrl ?>/register"><i class="fa fa-cogs"></i> Créer un compte</a>
             </li>
-<!--Connexion-->
+    <!--Connexion-->
             <li class="layout-right">
-            <a href="<?= $requestUrl ?>/user/login"><i class="fa fa-cogs"></i> Connexion</a>
+            <a href="<?= $requestUrl ?>/user/login"><i class="fa fa-sign-in-alt"></i> Connexion</a>
             </li>
+            <?php endif ?>
+
+<!--Identifié-->
+            <?php if (isset($_SESSION['FirstName'])): ?>
+
+            <p>Bonjour <a href=""><?php echo $_SESSION['FirstName']; ?></a></p>
+
+    <!--Reservation-->
+            <li>
+            <a href="<?= $requestUrl ?>/booking"><i class="fa fa-utensils"></i> Réserver une table</a>
+            </li>
+    <!--Commande-->
+            <li>
+            <a href="<?= $requestUrl ?>/order"><i class="fa fa-concierge-bell"></i> Commander en ligne</a>
+            </li>
+    <!--Deconnexion-->
+            <li class="layout-right">
+            <a href="<?= $requestUrl ?>/user/logout"><i class="fa fa-sign-out-alt"></i> Déconnexion</a>
+            </li>
+            <?php endif ?>
+
         </ul>
     </nav>
 

@@ -1,0 +1,80 @@
+<!--CREATION DE COMPTE-->
+
+<form class="generic-form">
+<h2><i class="fa fa-user"></i> Création d'un compte client</h2>
+
+<!--IDENTITE-->
+<fieldset method="post">
+    <legend><i class="fa fa-book"></i> Identité et coordonnées</legend>
+
+<ul>
+    <li><label for="nom">Nom: </label><input class="textarea" type="text" id="nom" name="nom"></li>
+    <li><label for="prenom">Prénom: </label><input class="textarea" type="text" id="prenom" name="prenom"></li>
+
+<!--BIRTHDATE-->
+    <li><label for="birthdate">Date de naissance: </label>
+        <select id="birthdate" name="jour" />
+
+            <?php
+
+            for ($i = 1; $i < 31; $i++)
+            {
+            echo '<option value=\'' . $i . '\'>' . $i . '</option>';
+            }
+            ?>  
+     
+        </select> /
+
+        <select id="birthdate" name="mois" /> 
+            <option value="01">Janvier</option>       
+            <option value="02">Février</option>       
+            <option value="03">Mars</option>       
+            <option value="04">Avril</option>       
+            <option value="05">Mai</option>       
+            <option value="06">Juin</option>       
+            <option value="07">Juillet</option>       
+            <option value="08">Aout</option>       
+            <option value="09">Septembre</option>       
+            <option value="10">Octobre</option>       
+            <option value="11">Novembre</option>       
+            <option value="12">Decembre</option>       
+        </select> /
+
+        <select id="birthdate" name="year" /> 
+     
+            <?php
+
+            for ($i = 2010; $i > 1930; $i--)
+            {
+            echo '<option value=\'' . $i . '\'>' . $i . '</option>';
+            }
+            ?>   
+   
+        </select>
+
+    </li>
+    <li><label for="adresse" class="textarea">Adresse: </label><textarea  id="adresse" name="adresse"></textarea></li>
+    <li><label for="ville">Ville: </label><input class="textarea" type="text" id="ville" name="ville"></li>
+    <li><label for="zip">Code Postal: </label><input class="zipcode" type="text" id="zip" name="zip"></li>
+    <li><label for="country">Pays: </label><input class="country" type="text" id="country" name="country"></li>
+    <li><label for="tel">Téléphone: </label><input class="phone" type="tel" id="tel" name="tel"></li>
+</ul>
+
+</fieldset>
+
+<!--AUTHENTIFICATION-->
+<fieldset>
+    <legend><i class="fa fa-lock"></i> Informations d'authenfication</legend>
+
+<ul>
+    <li><label for="mail">E-mail: </label><input type="email" id="mail" name="mail"></li>
+    <li><label for="password">Mot de passe: </label><input type="password" id="password" name="password"></li>
+</ul>
+
+</fieldset>
+
+<!--BOUTONS-->
+    <input class="button-primary button" type="submit" name="creer" value="Créer le compte">
+    <input class="button-cancel button" type="reset" name="annuler" value="Annuler">
+
+</form>

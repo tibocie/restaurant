@@ -1,6 +1,6 @@
 <!--RESERVETION TABLE-->
 
-<form class="generic-form">
+<form class="generic-form" method="post">
 <h2><i class="fa fa-utensils"></i> Réservation d'une table</h2>
 
 <!--INFORMATIONS-->
@@ -8,7 +8,8 @@
     <legend><i class="fa fa-lock"></i> Informations </legend>
 
 <ul>
-   <li><label for="booking">Date de réservation: </label>
+    <!--Date-->
+    <li><label for="booking">Date de réservation: </label>
         <select id="booking" name="jour" />
 
             <?php
@@ -21,19 +22,19 @@
      
         </select> /
 
-        <select id="birthdate" name="mois" /> 
-            <option>Janvier</option>       
-            <option>Février</option>       
-            <option>Mars</option>       
-            <option>Avril</option>       
-            <option>Mai</option>       
-            <option>Juin</option>       
-            <option>Juillet</option>       
-            <option>Aout</option>       
-            <option>Septembre</option>       
-            <option>Octobre</option>       
-            <option>Novembre</option>       
-            <option>Decembre</option>       
+        <select id="booking" name="mois" /> 
+            <option value="01">Janvier</option>       
+            <option value="02">Février</option>       
+            <option value="03">Mars</option>       
+            <option value="04">Avril</option>       
+            <option value="05">Mai</option>       
+            <option value="06">Juin</option>       
+            <option value="07">Juillet</option>       
+            <option value="08">Aout</option>       
+            <option value="09">Septembre</option>       
+            <option value="10">Octobre</option>       
+            <option value="11">Novembre</option>       
+            <option value="12">Decembre</option>  
         </select> /
 
         <select id="booking" name="year" /> 
@@ -53,7 +54,7 @@
         	<option>11</option>
             <option>12</option>       
             <option>13</option>       
-            <option>14</option>       
+            <option>14</option>     
             <option>18</option>       
             <option>19</option>       
             <option>20</option>       
@@ -73,12 +74,25 @@
         </select>
 
     </li>
+    <!--Nombre de places-->
+    <li><label for="people">Nombre de personne: </label>
+        <select id="people" name="people" />
+
+            <?php
+
+            for ($i = 1; $i < 12; $i++)
+            {
+            echo '<option value=\'' . $i . '\'>' . $i . '</option>';
+            }
+            ?>  
+     
+        </select></li>
 </ul>
 
 </fieldset>
 
 <!--BOUTONS-->
-    <input class="button-primary button" type="submit" name="" value="Réserver">
-    <input class="button-cancel button" type="reset" name="" value="Annuler">
+    <input class="button-primary button" type="submit" name="réserver" value="Réserver">
+    <input class="button-cancel button" type="reset" name="annuler" value="Annuler">
 
 </form>

@@ -27,6 +27,8 @@ require_once 'library/MicroKernel.class.php';
 require_once 'library/Http.class.php';
 require_once 'library/InterceptingFilter.interface.php';
 
+session_start();
 
 $microKernel = new MicroKernel();
 $microKernel->bootstrap()->run(new FrontController());
+

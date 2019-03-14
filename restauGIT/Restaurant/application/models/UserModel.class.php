@@ -50,7 +50,8 @@ class UserModel {
 			$_SESSION['LastName'] = $user['LastName'];
 		}
 
-		header('Location: index.php');
+
+		header('Location: ../');
 		exit();
 	}
 
@@ -85,7 +86,7 @@ class UserModel {
 
 
 			// ça c'est mal !!!!!!!!!!!
-			header('Location: changePassword.php?id='.$user['password'].'&mail='.$user['Email']);
+			header('Location: changePassword.php?id='.$user['Password'].'&mail='.$user['Email']);
 			exit();
 
 			return 'yes';

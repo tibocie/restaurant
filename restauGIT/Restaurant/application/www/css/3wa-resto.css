@@ -155,9 +155,11 @@ html
     /* presentation */
     list-style-type: none;
 }
+
 .link-list li
 {
     display: inline-block;
+    margin-right: 2rem;
 }
 
 .small
