@@ -4,14 +4,13 @@ class OrderController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
-
     	$mealModel = new MealModel();
         $meals = $mealModel->listing();
         return ['meals' => $meals];
 
         $orderModel = new OrderModel();
-        $orders = $orderModel->listing();
-        return ['orders' => $orders];
+        $orderModel->creationPanier();
+        $orderModel->ajouterArticle();
 
     }
 
@@ -22,7 +21,7 @@ class OrderController
         return ['meals' => $meals];
 
         $orderModel = new OrderModel();
-        $orders = $orderModel->listing();
-        return ['orders' => $orders];
+        $orderModel->creationPanier();
+
     }
 }
