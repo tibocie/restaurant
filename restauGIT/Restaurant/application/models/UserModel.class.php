@@ -79,13 +79,6 @@ class UserModel {
 		if ($user != false) {
 			$message = 'Cliquez sur le lien :<a href=changePassword.php?id="'.$user['Password'].'&mail='.$user['Email'].'">cliquez ici</a>';
 
-
-			// attention on envoie toujours l'url de change sur un mail !!!!!!!
-
-			//mail($user['email'], 'change password', $message);
-
-
-			// ça c'est mal !!!!!!!!!!!
 			header('Location: changePassword.php?id='.$user['Password'].'&mail='.$user['Email']);
 			exit();
 

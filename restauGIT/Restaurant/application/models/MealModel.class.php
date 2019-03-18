@@ -11,6 +11,15 @@ class MealModel
 
 		return $menu;
 	}
+
+	public function listOne($add){
+
+		$oneplat = new Database();
+
+		$onemenu = $oneplat->queryOne('SELECT * FROM Meal WHERE Id = ?', [$add]);
+
+		return $onemenu;
+	}
 }
 
 

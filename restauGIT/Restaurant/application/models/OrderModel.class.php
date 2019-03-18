@@ -7,9 +7,9 @@ class OrderModel
 
 	    if (!isset($_SESSION['panier'])){
 	      $_SESSION['panier']=array();
-	      $_SESSION['panier']['libelleProduit'] = array();
-	      $_SESSION['panier']['qteProduit'] = array();
-	      $_SESSION['panier']['prixProduit'] = array();
+	      $_SESSION['panier']['Name'] = array();
+	      $_SESSION['panier']['QuantityOrdered'] = array();
+	      $_SESSION['panier']['SalePrice'] = array();
 	      $_SESSION['panier']['verrou'] = false;
 	   	}
 	   	return true;
@@ -19,7 +19,7 @@ class OrderModel
 
    		if (creationPanier() && !isVerrouille()){
 
-      		$positionProduit = array_search($libelleProduit,  $_SESSION['panier']['libelleProduit']);
+      		$positionProduit = array_search($libelleProduit,  $_SESSION['panier']['Id']);
 
       		if ($positionProduit !== false){
 

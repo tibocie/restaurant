@@ -6,11 +6,14 @@ class OrderController
     {
     	$mealModel = new MealModel();
         $meals = $mealModel->listing();
-        return ['meals' => $meals];
-
-        $orderModel = new OrderModel();
-        $orderModel->creationPanier();
-        $orderModel->ajouterArticle();
+        
+        if (empty($queryFields['add'])) {
+            $queryFields['add'] = 1;
+        }
+        
+        $oneModel = $mealModel->listOne($queryFields['add']);
+        return ['meals' => $meals,
+                'oneModel' => $oneModel];
 
     }
 
