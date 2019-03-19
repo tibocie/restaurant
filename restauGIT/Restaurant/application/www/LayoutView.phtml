@@ -53,7 +53,7 @@
 <!--Identifié-->
             <?php if (isset($_SESSION['FirstName'])): ?>
 
-            <p>Bonjour <a href=""><?php echo $_SESSION['FirstName']; ?></a></p>
+            <p>Bonjour <a href="<?= $requestUrl ?>/user/account"><?php echo $_SESSION['FirstName']; ?></a></p>
 
     <!--Reservation-->
             <li>
@@ -61,7 +61,7 @@
             </li>
     <!--Commande-->
             <li>
-            <a href="<?= $requestUrl ?>/order"><i class="fa fa-concierge-bell"></i> Commander en ligne</a>
+            <a href="<?= $requestUrl ?>/basket"><i class="fa fa-concierge-bell"></i> Commander en ligne</a>
             </li>
     <!--Deconnexion-->
             <li class="layout-right">

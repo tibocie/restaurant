@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 		$.ajax({
 			type: 'GET',
-			url: 'order/selected?add='+selected,
+			url: 'basket/selected?add='+selected,
 
 			success: function(results){
 

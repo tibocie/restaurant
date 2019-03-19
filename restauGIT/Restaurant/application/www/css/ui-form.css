@@ -109,9 +109,21 @@
 {
     resize: none;
 }
+
 #basket-product
 {
     border: 1px solid #2C75FF;
     background-color: #3dccfa;
     color: white;
+    display: inline-flex;
+}
+
+.focus
+{
+    padding: 0 0 0 1rem;
+}
+
+.hidden
+{
+    display: none;
 }

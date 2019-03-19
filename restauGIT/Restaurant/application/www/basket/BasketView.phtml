@@ -1,0 +1,91 @@
+<!--COMMANDE-->
+<form class="generic-form" method="post">
+<h2><i class="fa fa-shopping-cart"></i> Passer une commande</h2>
+
+<!--AJOUT-->
+<fieldset action="#" >
+    <legend> Ajouter une article</legend>
+
+<ul>
+<!--SELECTION PRODUITS-->
+	<li><label for="add">Nom: </label>
+
+		<select id="add" name="add"/> 
+            <?php foreach($meals as $meal): ?>
+				<option value="<?= $meal['Id']; ?>" onclick="selectItem(event);"><?= $meal['Name']; ?></option>
+        	<?php endforeach; ?>       	
+        </select>
+    </li>
+
+<!--AFFICHAGE PRODUIT-->
+	<li><label for="basket-product"></label>
+		<fieldset id="basket-product">
+			<img src="<?= $wwwUrl ?>/images/meals/<?= $oneModel['Photo']; ?>">
+			<div class="focus">
+			<h3><?= $oneModel['Name']; ?></h3>
+			<p><?= $oneModel['Description']; ?></p>
+			<p><?= $oneModel['SalePrice']; ?> €</p>
+			</div>	
+		</fieldset>
+    </li>
+
+<!--QUANTITE-->
+    <li><label for="quantity">Quantité: </label>
+    	<input type="number" name="quantity" value="1">  	
+    </li>
+
+<!--BOUTONS-->
+    <button class="button-primary button" name="addproduct">Ajouter</button></a>
+
+</ul>
+</fieldset>
+
+<!--BASKET-->
+<fieldset action="#" method="post">
+	<legend> Recapitulatif de la commande</legend>
+<!--Basket vide-->
+			<?php
+				if ($basket){
+					$nbArticles=count($_SESSION['panier']['Id']);
+					if ($nbArticles <= 0)
+					echo "<tr><td>Votre panier est vide </ td></tr>";
+//<!--Basket plein-->
+					else{
+						echo "<table>
+								<thead>
+									<tr>
+									<th>Quantité</th>
+									<th>Produit</th>
+									<th>Prix Unitaire</th>
+									<th>Prix Total</th>
+									<th></th>
+									</tr>
+								</thead>
+								<tbody>";
+						for ($i=0 ;$i < $nbArticles ; $i++){
+							echo "<tr>";
+							echo "<td>".htmlspecialchars($_SESSION['panier']['Id'][$i])."</ td>";
+							echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['QuantityOrdered'][$i])."\"/></td>";
+							echo "<td>".htmlspecialchars($_SESSION['panier']['PriceEach'][$i])."</td>";
+							echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['Id'][$i]))."\">XX</a></td>";
+								echo "</tr>";
+							}
+					echo "<tr><td colspan=\"2\"> </td>";
+					echo "<td colspan=\"2\">";
+					echo "Total : ".MontantGlobal();
+					echo "</td></tr>";
+					echo "<tr><td colspan=\"4\">";
+					echo "<input type=\"submit\" value=\"Rafraichir\"/>";
+					echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
+					echo "</td></tr>";
+					}
+				};
+				?>
+			</tbody>
+		</table>
+</fieldset>
+</form>
+
+<!--BOUTONS-->
+    <input class="button-primary button" type="submit" name="" value="Valider la commande">
+    <input class="button-cancel button" type="reset" name="" value="Annuler">

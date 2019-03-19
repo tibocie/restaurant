@@ -95,3 +95,11 @@ function saveDataToDomStorage(name, data)
 
     window.localStorage.setItem(name, jsonData);
 }
+
+function hide()
+{
+    var target;
+
+    target = document.getElementById('hidden');
+    target.classList.toggle('hidden');
+}
